@@ -1,9 +1,13 @@
 package yuki;
 
+import com.huaban.analysis.jieba.JiebaSegmenter;
 import yuki.utils.GetSimiarityUtil;
 import yuki.utils.IOUtil;
+import yuki.utils.JieBaUtil;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -13,14 +17,11 @@ public class DupCheckMain {
 
     public static void main(String[] args) {
 
-        String result;
-        result = IOUtil.textToString("src/main/orig.txt");
-//        System.out.println("+++"+result);
+
         System.out.println("hello World");
-        String str1 = "我是一个帅哥";
-        String str2 = "帅哥是我";
-        GetSimiarityUtil getSimiarityUtil = new GetSimiarityUtil(str1,str2);
-        System.out.println(getSimiarityUtil.sim());
+        DupCheckMain d  = new DupCheckMain();
+        d.getRepetiveRate("src/main/orig.txt","src/main/orig_0.8_add.txt");
+
     }
 
 
@@ -30,18 +31,21 @@ public class DupCheckMain {
      * @param plagiarizePath 抄袭文件路径
      * @return 返回结果
      */
-    public Double getRepetiveRate(String originalPath,String plagiarizePath){
-        Double reuslt = null;
+    public void getRepetiveRate(String originalPath,String plagiarizePath){
+        Double result = null;
         File originalFile = new File(originalPath);
         File plagiarizeFile = new File(plagiarizePath);
         String oriStr  = IOUtil.textToString(originalPath); //文本转为字符串
         String plagStr = IOUtil.textToString(plagiarizePath);
         if(!originalFile.exists()||!plagiarizeFile.exists()){  //文件不存在
-            return null;
+            return ;
         }
         //余弦相似度计算
+        GetSimiarityUtil getSimiarityUtil = new GetSimiarityUtil(oriStr,plagStr);
+        System.out.println(getSimiarityUtil.sim());
 
-        return reuslt;
+
+
     }
 
 }
