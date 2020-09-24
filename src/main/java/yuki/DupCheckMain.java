@@ -1,18 +1,28 @@
 package yuki;
 
+import yuki.utils.GetSimiarityUtil;
 import yuki.utils.IOUtil;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class DupCheckMain {
+
+
     public static void main(String[] args) {
 
         String result;
         result = IOUtil.textToString("src/main/orig.txt");
 //        System.out.println("+++"+result);
         System.out.println("hello World");
-
+        String str1 = "我是一个帅哥";
+        String str2 = "帅哥是我";
+        GetSimiarityUtil getSimiarityUtil = new GetSimiarityUtil(str1,str2);
+        System.out.println(getSimiarityUtil.sim());
     }
+
 
     /**
      *
