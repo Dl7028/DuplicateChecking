@@ -13,30 +13,12 @@ public class GetSimiarityUtil {
 
     int[] tempArray = null;
 
- /*   public  GetSimiarityUtil(String string1, String string2) {
 
-        for (Character character1 : string1.toCharArray()) {
-            if (vectorMap.containsKey(character1)) {
-                vectorMap.get(character1)[0]++;
-            } else {
-                tempArray = new int[2];
-                tempArray[0] = 1;
-                tempArray[1] = 0;
-                vectorMap.put(character1, tempArray);
-            }
-        }
-        for (Character character2 : string2.toCharArray()) {
-            if (vectorMap.containsKey(character2)) {
-                vectorMap.get(character2)[1]++;
-            } else {
-                tempArray = new int[2];
-                tempArray[0] = 0;
-                tempArray[1] = 1;
-                vectorMap.put(character2, tempArray);
-            }
-        }
-    }*/
-
+    /**
+     * 构造器 在这里面分词
+     * @param str1 文本1
+     * @param str2 文本2
+     */
     public  GetSimiarityUtil(String str1,String str2) {
 
         ArrayList<String> list1 = new ArrayList<>();
@@ -64,7 +46,11 @@ public class GetSimiarityUtil {
         }
     }
 
-    // 求平方和
+    /**
+     *  求平方和
+     * @param paramMap 键值对，记录词组的数量
+     * @return 返回词组平方和
+     */
     private double squares(Map<String, int[]> paramMap) {
         double result1 = 0;
         double result2 = 0;
@@ -102,6 +88,6 @@ public class GetSimiarityUtil {
     }
 
 
-    
+
 
 }

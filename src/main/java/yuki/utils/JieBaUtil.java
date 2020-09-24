@@ -6,6 +6,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 结巴分词工具类
@@ -13,17 +15,20 @@ import java.util.List;
 
 public class JieBaUtil {
 
+
     /**
      * 开始调用结巴分词
      * @param text1 文本1
      */
     public static List<String> startParticiple(String text1){
         JiebaSegmenter segmenter = new JiebaSegmenter();
-
-//        System.out.println(segmenter.sentenceProcess(text1));
         List<String> s = segmenter.sentenceProcess(text1);
-
-      return s;
+        return s;
 
     }
-}
+
+    }
+
+
+
+
