@@ -1,0 +1,3 @@
+src/main/orig.txt
+src/main/orig_0.8_add.txt
+相似度 ：0.9955656474366519

@@ -53,5 +53,23 @@ public class IOUtil {
         return sb.toString();
     }
 
+    /**
+     * 输出文件,输出结果
+     * @param outputFilePath 输出文件的路径
+     * @param result 字符串形式传入结果
+     */
+    public static void convertString2File(String outputFilePath,String result){
+        //创建输出路径的文件
+        File outputFile = new File(outputFilePath);
+        try (FileWriter fr = new FileWriter(outputFile)) {
+            char[] cs = result.toCharArray();
+            fr.write(cs);
+            fr.close();
+            System.out.println("结果写入 " + outputFilePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
