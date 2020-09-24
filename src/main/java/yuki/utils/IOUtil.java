@@ -58,7 +58,7 @@ public class IOUtil {
      * @param outputFilePath 输出文件的路径
      * @param result 字符串形式传入结果
      */
-    public static void convertString2File(String outputFilePath,String result){
+    public static void StringToFile(String outputFilePath, String result){
         //创建输出路径的文件
         File outputFile = new File(outputFilePath);
         try (FileWriter fr = new FileWriter(outputFile)) {

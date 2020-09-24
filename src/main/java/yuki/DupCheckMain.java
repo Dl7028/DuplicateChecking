@@ -1,16 +1,9 @@
 package yuki;
 
-import com.huaban.analysis.jieba.JiebaSegmenter;
 import yuki.utils.GetSimiarityUtil;
 import yuki.utils.IOUtil;
-import yuki.utils.JieBaUtil;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
 
 public class DupCheckMain {
 
@@ -43,7 +36,7 @@ public class DupCheckMain {
         GetSimiarityUtil getSimiarityUtil = new GetSimiarityUtil(oriStr, plagStr);
         System.out.println("相似度："+getSimiarityUtil.sim());
         result = getSimiarityUtil.sim();
-        IOUtil.convertString2File("src/main/result.txt", originalPath + "\n" + plagiarizePath + "\n"
+        IOUtil.StringToFile("DuplicateChecking/src/main/result.txt", originalPath + "\n" + plagiarizePath + "\n"
                 + "相似度 ：" + result);
         return result;
     }
